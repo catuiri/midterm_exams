@@ -1,0 +1,26 @@
+---
+title: "Midterm Exams Titanic dataset"
+author: "Clifford Atuiri"
+date: "2022-10-16"
+output: pdf_document
+---
+
+```{r}
+### Importaing titanic dataframe####
+library(tidyverse)
+titanic<-read_csv("https://raw.githubusercontent.com/kijohnson/Data/main/titanic.csv")
+```
+```{r}
+### Descriptives of dataframe##
+##median age for each passenger class##
+aggregate(titanic$Age,         
+          list(titanic$Pclass),
+          median)
+##box plot with median, spread and outliers###
+Age_years<-titanic$Age
+Passenger_class<-titanic$Pclass
+boxplot(Age_years ~ Passenger_class)
+```
+```{r}
+
+
