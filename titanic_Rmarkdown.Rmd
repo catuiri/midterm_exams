@@ -22,5 +22,8 @@ Passenger_class<-titanic$Pclass
 boxplot(Age_years ~ Passenger_class)
 ```
 ```{r}
-
+## proportion of males and females by passenger class##
+library(gmodels)
+CrossTable(titanic$Pclass, titanic$Sex, digits=3, max.width = 5, expected=FALSE, prop.r=TRUE, prop.c=TRUE, prop.t=FALSE, prop.chisq=FALSE, chisq = FALSE, fisher=FALSE, mcnemar=FALSE, resid=FALSE, sresid=FALSE, asresid=FALSE, missing.include=FALSE, format=c("SAS","SPSS"), dnn = NULL)
+```
 
